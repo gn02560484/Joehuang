@@ -119,7 +119,7 @@ public class GuessNumber extends JFrame {
 
 			}
 	
-		return "" +poker[0] + poker[1] + poker[2] ;
+		return "" +poker[0] + poker[1] + poker[2] ;//String和int放在一起, 全部視為String
 	}
 	
 	boolean checkvalid(String input) {
