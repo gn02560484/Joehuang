@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,6 +20,7 @@ public class GuessNumber extends JFrame {
 	private JTextArea hist;
 	private String answer = createAnswer();
 	private int count = 0;
+
 	
 	
  	public GuessNumber() {
@@ -27,7 +30,7 @@ public class GuessNumber extends JFrame {
 		input = new JTextField();
 		hist = new JTextArea();
 		hist.setFont(new Font("default",Font.BOLD , 24));
-		input.setVisible(true);;
+		//input.setVisible(true);
 
 		
 		setLayout(new BorderLayout()); //設計guessnumber 的版面
@@ -44,6 +47,31 @@ public class GuessNumber extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				doGuess();
+				
+			}
+		});
+		
+		input.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+//				System.out.println(e.getKeyCode());
+				if(e.getKeyCode()==10) {
+					doGuess();
+				}
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		

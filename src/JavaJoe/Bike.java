@@ -1,6 +1,8 @@
 package JavaJoe;
 
-public class Bike { //任何一個java原始檔中, 只能有一個public的class ,並且class名稱大小寫要和檔名一樣, 沒有public的class只有相同package的可以讀取的到
+import java.io.Serializable;
+
+public class Bike implements Serializable { //任何一個java原始檔中, 只能有一個public的class ,並且class名稱大小寫要和檔名一樣, 沒有public的class只有相同package的可以讀取的到
 	protected double speed; //類別的屬性(field)  //private 代表這個屬性, 只有在同一個類別中才能夠存取 (屬性封裝) //public, protect,沒有, private 
 	//public : 所有人都可以存取
 	//protect : 同一個package 都可以存取
