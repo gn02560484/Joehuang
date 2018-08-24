@@ -9,7 +9,7 @@ public class joe63 {
 
 	public static void main(String[] args) {
 		try {
-			Socket socket = new Socket("192.168.201.161", 9999);
+			Socket socket = new Socket("192.168.0.2", 9999);
 			
 			OutputStream out = socket.getOutputStream();
 			out.write("Hello!嗨嗨嗨\n你好\n".getBytes());

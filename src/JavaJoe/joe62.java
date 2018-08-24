@@ -19,8 +19,7 @@ public class joe62 {
 			InputStream in = socket.getInputStream();
 			InputStreamReader isr = new InputStreamReader(in);
 			BufferedReader br = new BufferedReader(isr);
-			
-			
+						
 			int len;String line;
 			while((line = br.readLine()) != null ) {
 				System.out.println(line);
