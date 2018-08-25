@@ -1,5 +1,6 @@
 package JavaJoe;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,18 +9,28 @@ import java.util.LinkedList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import JClock.DigitalClock;
 
 public class Racing extends JFrame{
 	private JButton go;
 	private JLabel[] lanes = new JLabel[8];
 	private Horse[] horses = new Horse[8];
 	private int rank = 1;
+	private DigitalClock clock = new DigitalClock();
 	
 	public Racing() {
 		super();
 		setLayout(new GridLayout(9, 0));
 		
-		go = new JButton("GO");add(go);
+		JPanel top = new JPanel(new BorderLayout());
+		go = new JButton("GO");
+		top.add(go, BorderLayout.CENTER);
+		top.add(clock, BorderLayout.EAST);
+		clock.setSize(200, 200);
+		
+		add(top);
 		for(int i =0; i<lanes.length;i++){
 			lanes[i] = new JLabel((i+1) + ".");
 			add(lanes[i]);
